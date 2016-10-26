@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Gym! - Personal training</title>                   
+  <script src='angular.js'></script>
+</head>
+
+<script>
+
+angular.module('app',[])
+.factory('service', function () {
+
+   var r=  function reverse(s) {
+        var o = '';
+        for (var i = s.length - 1; i >= 0; i--)
+            o += s[i];
+        return o;
+    }
+
+   return{
+       reverseString: function reverseString(name)
+       {
+           return r(name);
+       }
+   }
+
+})
+.controller('ctrl1', function($scope, service){
+	
+	$scope.name = service.reverseString('sheikh');
+})
+.controller('ctrl2', function($scope, service){
+	
+});
+</script>
+<body>
+	
+<div ng-app='app'>
+
+	<div ng-controller='ctrl1'>
+		<p ng-bind= 'name'></p>
+	</div>
+	<div ng-controller='ctrl2'>
+		<p ng-bind= 'info2'></p>
+	</div>
+	
+</div>
+
+</body>
+</html>

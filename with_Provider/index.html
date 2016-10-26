@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Gym! - Personal training</title>  
+	<style>
+		.ctrl1 {
+			background-color: lightblue;
+			width: 250px;
+			padding: 10px;
+			box-shadow: 7px 7px 3px #888888;
+			border-radius: 15px 5px 5px 5px;
+		}
+		.ctrl2 {
+			background-color: lightgreen;
+			width: 250px;
+			padding: 10px;
+			box-shadow: 7px 7px 3px #888888;
+			border-radius: 20px 5px 5px 5px;
+		}
+		.yellow {
+			background-color: lightyellow;
+		}
+		span {
+			color: red;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	
+<div ng-app='app'>
+
+	<div ng-controller='ctrl1' class='ctrl1'>
+		<h3>Controller 1</h3>
+		<p ng-bind= 'info1'></p>
+		<p ng-bind= 'info2'></p>
+	</div><br/><br/>
+	<div ng-controller='ctrl2' class='ctrl2'>
+		<h3>Controller 2</h3>
+		<div class='yellow'>
+			<p ng-bind= 'info1'></p>		
+			<p ng-bind= 'info2'></p>
+			<span>This shows services are singleton</span>
+		</div>
+		<br/>
+		<p ng-bind= 'info3'></p>
+		<p ng-bind= 'info4'></p>
+	</div>
+	
+</div>
+
+
+<script src='angular.js'></script>
+<script src='app.modules.js'></script>
+<script src='app.provider.js'></script>
+<script src='app.js'></script>
+
+</body>
+</html>
